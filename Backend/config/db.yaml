@@ -1,0 +1,9 @@
+supabase:
+  url_env: SUPABASE_URL
+  key_env: SUPABASE_SERVICE_ROLE_KEY
+  table_users: users
+  table_chat_sessions: chat_sessions
+  table_chat_messages: chat_messages
+  table_user_preferences: user_preferences
+  retry_attempts: 3
+  connection_timeout: 10

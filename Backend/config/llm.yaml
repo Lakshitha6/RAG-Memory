@@ -1,0 +1,28 @@
+providers:
+  primary:
+    name: gemini
+    model: gemini-3.5-flash
+    api_key_env: GEMINI_API_KEY
+    timeout: 30
+    retries: 1
+
+  fallback:
+    name: groq
+    model: groq/compound-mini
+    api_key_env: GROQ_API_KEY
+    timeout: 8
+    retries: 1
+
+
+# Embedding Service (HuggingFace)
+embeddings:
+  model: "sentence-transformers/all-mpnet-base-v2"
+
+settings:
+  max_tokens: 1024
+  temperature: 0.2
+  fallback_on_error: true
+  fallback_errors:
+    - 429  # Rate limit
+    - 500  # Server error
+    - 503  # Unavailable

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Handbook Assistant</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- mobile sidebar overlay -->
+  <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+
+  <div class="chat-layout">
+
+    <!-- ── Sidebar ──────────────────────────────────────── -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-brand">
+          <div class="brand-icon">🎓</div>
+          <div class="brand-name">Handbook AI</div>
+        </div>
+        <button class="btn-new-chat" id="newChatBtn">
+          <span>✦</span> New conversation
+        </button>
+      </div>
+
+      <div class="sidebar-section-label">Recent</div>
+
+      <div class="sessions-list" id="sessionsList">
+        <div class="sessions-empty">Loading conversations…</div>
+      </div>
+
+      <div class="sidebar-footer">
+        <div class="user-info">
+          <div class="user-avatar" id="userAvatar">U</div>
+          <div class="user-details">
+            <div class="user-name"  id="userName">User</div>
+            <div class="user-email" id="userEmail"></div>
+          </div>
+          <button class="logout-btn" id="logoutBtn" title="Sign out">⏻</button>
+        </div>
+      </div>
+    </aside>
+
+    <!-- ── Main ─────────────────────────────────────────── -->
+    <main class="chat-main">
+
+      <header class="chat-header">
+        <button class="mobile-menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+        <div class="chat-header-title" id="chatTitle">Student Handbook Assistant</div>
+        <div class="chat-header-status">
+          <div class="status-dot"></div>
+          Online
+        </div>
+      </header>
+
+      <div class="messages-area" id="messagesArea">
+        <div class="messages-inner" id="messagesInner">
+
+          <!-- Welcome state — hidden once conversation starts -->
+          <div class="welcome-state" id="welcomeState">
+            <div class="welcome-icon">🎓</div>
+            <div class="welcome-title">Student Handbook Assistant</div>
+            <div class="welcome-text">
+              Ask me anything about academic policies, course requirements,
+              grading, registration, or student regulations.
+            </div>
+            <div class="suggestions">
+              <button class="suggestion-chip">What is the repeat course policy?</button>
+              <button class="suggestion-chip">How is GPA calculated?</button>
+              <button class="suggestion-chip">What are the graduation requirements?</button>
+              <button class="suggestion-chip">What happens if I fail a course?</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="input-area">
+        <div class="input-inner">
+          <div class="input-box">
+            <textarea
+              id="messageInput"
+              placeholder="Ask about the student handbook…"
+              rows="1"
+            ></textarea>
+            <button class="send-btn" id="sendBtn" title="Send">↑</button>
+          </div>
+          <div class="input-hint">
+            Press Enter to send · Shift + Enter for a new line
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <script src="js/config.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/sessions.js"></script>
+  <script src="js/chat.js"></script>
+</body>
+</html>

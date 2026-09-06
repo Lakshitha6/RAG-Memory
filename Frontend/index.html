@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Handbook Assistant</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="auth-page">
+    <div class="auth-card">
+
+      <div class="auth-logo">
+        <div class="auth-logo-icon">🎓</div>
+        <div class="auth-logo-text">
+          Student <span>Handbook</span>
+        </div>
+      </div>
+
+      <div class="auth-tabs">
+        <button class="auth-tab active" data-tab="login">Sign in</button>
+        <button class="auth-tab"        data-tab="register">Create account</button>
+      </div>
+
+      <!-- Login form -->
+      <div id="loginForm">
+        <div class="form-group">
+          <label class="form-label" for="loginEmail">Email</label>
+          <input class="form-input" id="loginEmail" type="email"
+                 placeholder="you@example.com" autocomplete="email" />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="loginPassword">Password</label>
+          <input class="form-input" id="loginPassword" type="password"
+                 placeholder="Your password" autocomplete="current-password" />
+        </div>
+        <button class="btn btn-primary" id="loginBtn">Sign in</button>
+        <div class="auth-error" id="loginError"></div>
+      </div>
+
+      <!-- Register form -->
+      <div id="registerForm" class="hidden">
+        <div class="form-group">
+          <label class="form-label" for="regName">Full name</label>
+          <input class="form-input" id="regName" type="text"
+                 placeholder="Jhon Doe" autocomplete="name" />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="regEmail">Email</label>
+          <input class="form-input" id="regEmail" type="email"
+                 placeholder="you@example.com" autocomplete="email" />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="regPassword">Password</label>
+          <input class="form-input" id="regPassword" type="password"
+                 placeholder="At least 8 characters" autocomplete="new-password" />
+        </div>
+        <button class="btn btn-primary" id="registerBtn">Create account</button>
+        <div class="auth-error" id="registerError"></div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="js/config.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>

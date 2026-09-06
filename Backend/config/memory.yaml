@@ -1,0 +1,14 @@
+tiers:
+  short_term:
+    max_turns: 10
+    ttl_minutes: 30
+  medium_term:
+    max_sessions: 50
+    summary_turns: 3
+  long_term:
+    similarity_threshold: 0.75
+    update_batch_size: 100
+retrieval:
+  hybrid_search: true
+  top_k: 5
+  fallback_to_keyword: true
