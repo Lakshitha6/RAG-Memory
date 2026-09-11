@@ -27,7 +27,7 @@ Frontend (HTML/CSS/JS)
 FastAPI Backend
         │
         ├── RAGService          ← LCEL pipeline (retrieval + generation)
-        │       ├── EmbeddingService   ← HuggingFace + Qdrant
+        │       ├── EmbeddingService   ← HuggingFace + Qdrant (Sparse + Dense) + RRF
         │       └── LLMService         ← Gemini (primary) + Groq (fallback)
         │
         ├── DatabaseService     ← Supabase (sessions, messages, preferences)
@@ -227,7 +227,7 @@ Run [`Backend/db_setup/table_creation.sql`](Backend/db_setup/table_creation.sql)
 
 ### 7. Ingest your documents into Qdrant
 
-Add your PDF/text documents to Qdrant under collection name `student_handbook` before running the backend. The embedding service connects to an existing collection — it does not create or populate it.
+Run [`Backend/db_setup/Qdrant_ingestion.ipynb`](Backend/db_setup/Qdrant_ingestion.ipynb) to create the two collections (child and parent) and ingest your handbook content. It uses the HuggingFace embedding model to generate vectors and stores them in Qdrant.
 
 ### 8. Run the backend
 

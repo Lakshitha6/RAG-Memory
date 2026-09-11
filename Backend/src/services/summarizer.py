@@ -51,7 +51,7 @@ async def _run_summarizer(user_id: str) -> None:
 
     try:
         prefs = DATABASE.get_preferences(user_id) or {}
-        since = prefs["updated_at"] if prefs else "1970-01-01T00:00:00Z"
+        since = (prefs or {}).get("updated_at", "1970-01-01T00:00:00Z")
 
         raw_messages = DATABASE.get_messages_since(user_id, since)
         if not raw_messages:

@@ -132,7 +132,7 @@ class DatabaseService:
     def get_preferences(self, user_id: str) -> dict | None:
         res = (
             self._client.table("user_preferences")
-            .select("preferred_language, response_detail_level, common_queries, summary")
+            .select("preferred_language, response_detail_level, common_queries, summary, updated_at")
             .eq("user_id", user_id)
             .maybe_single()
             .execute()
